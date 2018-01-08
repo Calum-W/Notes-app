@@ -10,5 +10,10 @@
     this.list.push(note)
   };
 
+  Note.prototype.HTMLifyNotes = function() {
+    var htmlList = this.list.join("</li><li>")
+    return "<ul><li>" + htmlList + "</li></ul>"
+  }
+
   exports.Note = Note;
 })(this);

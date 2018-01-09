@@ -5,7 +5,8 @@
     this.notes = [];
   };
 
-  Notepad.prototype.addNote = function(note){
+  Notepad.prototype.addNote = function(noteTitle, noteMessage){
+    note = new Note(noteTitle, noteMessage)
     this.notes.push(note)
   };
 

@@ -3,10 +3,9 @@
   HTMLifyNotes = function(notepad) {
     var messages = [];
     for (i = 0; i < notepad.notes.length; i ++) {
-      messages.push(notepad.notes[i])
+      messages.push(notepad.notes[i].message)
     }
-    var htmlList = messages.join("</li><li>")
-    return "<ul><li>" + htmlList + "</li></ul>"
+    return "<ul><li>" + messages.join("</li><li>") + "</li></ul>"
   }
 
   exports.HTMLifyNotes = HTMLifyNotes;

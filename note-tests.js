@@ -23,7 +23,7 @@ function testHTMLifyNotes() {
   var notepad = new Notepad
   notepad.addNote("My favourite language is Javascript");
   notepad.addNote("My favourite hobby is lying");
-  assert.isTrue(notepad.HTMLifyNotes() == "<ul><li>My favourite language is Javascript</li><li>My favourite hobby is lying</li></ul>");
+  assert.isTrue(HTMLifyNotes(notepad) == "<ul><li>My favourite language is Javascript</li><li>My favourite hobby is lying</li></ul>");
 };
 
 testHTMLifyNotes();

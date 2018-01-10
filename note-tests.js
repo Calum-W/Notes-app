@@ -25,3 +25,22 @@ function testHTMLifyNotes() {
 };
 
 testHTMLifyNotes();
+
+function testNoteController() {
+  var notepad = new Notepad
+  var noteController = new NoteController(notepad)
+  function NoteListViewDouble() {
+  }
+  NoteListViewDouble.prototype =  {
+    HTMLifyNotes: function() {
+      return "it worked"
+    }
+  }
+  notepad.addNote("Language", "My favourite language is Javascript")
+  notepad.addNote("Disclaimer", "My favourite hobby is lying")
+  var noteListViewDouble = new NoteListViewDouble
+  noteController.insertHTML(noteListViewDouble)
+  assert.isTrue(document.getElementById("notelist").innerHTML == "it worked")
+}
+
+testNoteController()

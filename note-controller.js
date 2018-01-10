@@ -1,5 +1,3 @@
-window.onload = function() {
-
   (function(exports) {
     function NoteController(notepad = new Notepad()) {
       this.notepad = notepad
@@ -7,14 +5,9 @@ window.onload = function() {
       this.view = new NoteListView(this.notepad)
     };
 
-    NoteController.prototype.insertHTML = function() {
-      document.getElementById("notelist").innerHTML = this.view.HTMLifyNotes();
+    NoteController.prototype.insertHTML = function(noteListView = this.view) {
+      document.getElementById("notelist").innerHTML = noteListView.HTMLifyNotes();
     }
 
     exports.NoteController = NoteController;
   })(this);
-
-  controller = new NoteController();
-  controller.insertHTML();
-
-};

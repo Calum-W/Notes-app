@@ -1,13 +1,17 @@
 (function(exports) {
 
-  HTMLifyNotes = function(notepad) {
+  function NoteListView(notepad) {
+    this.notepad = notepad;
+  }
+
+  NoteListView.prototype.HTMLifyNotes = function() {
     var messages = [];
-    for (i = 0; i < notepad.notes.length; i ++) {
-      messages.push(notepad.notes[i].message)
+    for (i = 0; i < this.notepad.notes.length; i ++) {
+      messages.push(this.notepad.notes[i].message)
     }
     return "<ul><li>" + messages.join("</li><li>") + "</li></ul>"
   }
 
-  exports.HTMLifyNotes = HTMLifyNotes;
+  exports.NoteListView = NoteListView;
 
 })(this);

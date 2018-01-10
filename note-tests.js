@@ -19,8 +19,8 @@ testListNotes();
 function testHTMLifyNotes() {
   var notepad = new Notepad
   noteListView = new NoteListView(notepad)
-  notepad.addNote("Language", "My favourite language is Javascript")
-  notepad.addNote("Disclaimer", "My favourite hobby is lying")
+  notepad.addNote("Language", "Javascript")
+  notepad.addNote("Disclaimer", "I love lying")
   assert.isTrue(noteListView.HTMLifyNotes() == "<ul><li>My favourite language is Javascript</li><li>My favourite hobby is lying</li></ul>");
 };
 
@@ -36,8 +36,8 @@ function testNoteController() {
       return "it worked"
     }
   }
-  notepad.addNote("Language", "My favourite language is Javascript")
-  notepad.addNote("Disclaimer", "My favourite hobby is lying")
+  notepad.addNote("Language", "Javascript")
+  notepad.addNote("Disclaimer", "I love lying")
   var noteListViewDouble = new NoteListViewDouble
   noteController.insertHTML(noteListViewDouble)
   assert.isTrue(document.getElementById("notelist").innerHTML == "it worked")
@@ -52,3 +52,11 @@ function testSingleNoteView() {
 }
 
 testSingleNoteView()
+
+function testHTMLifyNotes() {
+  var notepad = new Notepad
+  noteListView = new NoteListView(notepad)
+  notepad.addNote("Language", "My favourite language is Javascript")
+  notepad.addNote("Disclaimer", "My favourite hobby is lying")
+  assert.isTrue(noteListView.HTMLifyNotes() == "<ul><li>My favourite languag</li><li>My favourite hobby i</li></ul>");
+};

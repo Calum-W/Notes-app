@@ -21,7 +21,7 @@ function testHTMLifyNotes() {
   noteListView = new NoteListView(notepad)
   notepad.addNote("Language", "Javascript")
   notepad.addNote("Disclaimer", "I love lying")
-  assert.isTrue(noteListView.HTMLifyNotes() == "<ul><li>My favourite language is Javascript</li><li>My favourite hobby is lying</li></ul>");
+  assert.isTrue(noteListView.HTMLifyNotes() == "<ul><li>Javascript</li><li>I love lying</li></ul>");
 };
 
 testHTMLifyNotes();
@@ -53,10 +53,12 @@ function testSingleNoteView() {
 
 testSingleNoteView()
 
-function testHTMLifyNotes() {
+function testHTMLifyNotesLength() {
   var notepad = new Notepad
   noteListView = new NoteListView(notepad)
   notepad.addNote("Language", "My favourite language is Javascript")
   notepad.addNote("Disclaimer", "My favourite hobby is lying")
   assert.isTrue(noteListView.HTMLifyNotes() == "<ul><li>My favourite languag</li><li>My favourite hobby i</li></ul>");
 };
+
+testHTMLifyNotesLength()

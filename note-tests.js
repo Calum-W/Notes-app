@@ -48,5 +48,7 @@ testNoteController()
 function testSingleNoteView() {
   var note = new Note("Language", "My favourite language is Javascript");
   var singleNoteView = new SingleNoteView(note);
-  assert.isTrue(singleNoteView.displaySIngleNote == "<h2>Language</h2><p>My favourite language is Javascript</p>")
+  assert.isTrue(singleNoteView.display() == "<h2>Language</h2><p>My favourite language is Javascript</p>")
 }
+
+testSingleNoteView()

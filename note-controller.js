@@ -1,7 +1,6 @@
   (function(exports) {
     function NoteController(notepad = new Notepad()) {
-      this.notepad = notepad
-      this.notepad.addNote("Drink", "Favourite drink: milkshake");
+      this.notepad = notepad;
       this.view = new NoteListView(this.notepad)
     };
 

@@ -8,13 +8,5 @@
     idCounter ++
   };
 
-  Note.prototype.getID = function() {
-    return this.id
-  }
-
-  Note.prototype.getMessage = function() {
-    return this.message
-  }
-
   exports.Note = Note;
 })(this);

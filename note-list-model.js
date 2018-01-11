@@ -1,5 +1,4 @@
 (function(exports) {
-  var notepad = new Notepad();
 
   function Notepad() {
     this.notes = [];

@@ -36,7 +36,7 @@ function testHTMLifyNotes2() {
     this.id = 1
     this.message = "12345678901234567890this bit shouldn't appear"
   }
-  assert.isTrue(noteListView.HTMLifyNotes() == "<ul><li><li><a href='#1'>12345678901234567890</a></li></li></ul>", "Prints IDs and first 20 characters of the message");
+  assert.isTrue(noteListView.HTMLifyNotes() == "<ul><li><a href='#1'>12345678901234567890</a></li></li></ul>", "Prints IDs and first 20 characters of the message");
 }
 
 testHTMLifyNotes2()

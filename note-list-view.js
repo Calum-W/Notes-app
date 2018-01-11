@@ -6,7 +6,7 @@
 
   NoteListView.prototype.HTMLifyNotes = function() {
     return "<ul><li>" +
-  this.notepad.notes.map( note => "<li><div id=" + note.id + ">" + note.message.slice(0, 20) + "</div></li>" ).join() +
+  this.notepad.notes.map( note => "<li><a href='#" + note.id + "'>" + note.message.slice(0, 20) + "</a></li>" ).join() +
   "</li></ul>"
   }
 

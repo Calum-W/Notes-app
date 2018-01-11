@@ -1,19 +1,20 @@
-makeUrlChangeShowAnimalForCurrentPage();
+makeUrlChangeShowNoteForCurrentPage();
 
-function makeUrlChangeShowAnimalForCurrentPage() {
-  window.addEventListener("hashchange", showAnimalForCurrentPage);
+function makeUrlChangeShowNoteForCurrentPage() {
+  window.addEventListener("hashchange", showNoteForCurrentPage);
 };
 
-function showAnimalForCurrentPage() {
-  showAnimal(getAnimalFromUrl(window.location));
+function showNoteForCurrentPage() {
+  showNote(getNoteIDFromUrl(window.location));
 };
 
-function getAnimalFromUrl(location) {
+function getNoteIDFromUrl(location) {
   return location.hash.split("#")[1];
 };
 
-function showAnimal(animal) {
+function showNote(noteID) {
+  var singleNoteView = new SingleNoteView(controller.notepad.notes[noteID])
   document
-    .getElementById("animal")
-    .innerHTML = animal;
+    .getElementById("notelist")
+    .innerHTML = singleNoteView.display();
 };

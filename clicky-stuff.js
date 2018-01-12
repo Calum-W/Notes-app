@@ -14,6 +14,7 @@ function getNoteIDFromUrl(location) {
 
 function showNote(noteID) {
   var singleNoteView = new SingleNoteView(controller.notepad.notes[noteID])
+  console.log(singleNoteView)
   document
     .getElementById("notelist")
     .innerHTML = singleNoteView.display();
